@@ -1,0 +1,43 @@
+We check the divisibility of the given number N with all the numbers starting from 2 to (N/2).
+If it is completely divisible by any number i.e. remainder is zero after division, then the number is not a prime number.
+If it is not completely divisible by a number between 2 and (N/2), then the number is a prime number.
+
+// C Program to check for prime number using Naive Approach
+#include <stdio.h>
+
+// Function to check prime number
+void checkPrime(int N)
+{
+	// initially, flag is set to true or 1
+	int flag = 1;
+
+	// loop to iterate through 2 to N/2
+	for (int i = 2; i <= N / 2; i++) {
+
+		// if N is perfectly divisible by i
+		// flag is set to 0 i.e false
+		if (N % i == 0) {
+			flag = 0;
+			break;
+		}
+	}
+
+	if (flag) {
+		printf("The number %d is a Prime Number\n", N);
+	}
+	else {
+		printf("The number %d is not a Prime Number\n", N);
+	}
+
+	return;
+}
+
+// driver code
+int main()
+{
+	int N = 546;
+
+	checkPrime(N);
+
+	return 0;
+}
