@@ -1,0 +1,55 @@
+A Naive Solution would be to iterate all the numbers from 1 to n, checking if that number divides n and printing it. Below is a program for the same:
+// C implementation of Naive
+// method to print all divisors
+#include<stdio.h>
+
+// Function to print the divisors
+void printDivisors(int n)
+{
+	for (int i = 1; i <= n; i++)
+		if (n % i == 0)
+			printf("%d ", i);
+}
+
+// Driver code
+int main()
+{
+	printf("The divisors of 100 are: ");
+	printDivisors(100);
+	return 0;
+}
+
+--------------------------------------------------------
+// A Better (than Naive) Solution
+// to find all divisors
+#include <stdio.h>
+#include <math.h>
+
+// Function to print the divisors
+void printDivisors(int n)
+{
+	// Note that this loop runs till
+	// square root
+	for (int i = 1; i <= sqrt(n); i++)
+	{
+		if (n % i == 0)
+		{
+			// If divisors are equal,
+			// print only one
+			if (n / i == i)
+				printf("%d ", i);
+
+			// Otherwise print both
+			else
+				printf("%d %d ", i, n / i);
+		}
+	}
+}
+
+// Driver code
+int main()
+{
+	printf("The divisors of 100 are: ");
+	printDivisors(100);
+	return 0;
+}
