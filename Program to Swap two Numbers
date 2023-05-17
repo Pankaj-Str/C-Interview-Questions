@@ -1,0 +1,24 @@
+// The idea is simple
+
+// Assign x to a temp variable : temp = x
+// Assign y to x : x = y
+// Assign temp to y : y = temp
+
+// C program to swap two variables
+#include <stdio.h>
+
+int main()
+{
+	int x, y;
+	printf("Enter Value of x ");
+	scanf("%d", &x);
+	printf("\nEnter Value of y ");
+	scanf("%d", &y);
+
+	int temp = x;
+	x = y;
+	y = temp;
+
+	printf("\nAfter Swapping: x = %d, y = %d", x, y);
+	return 0;
+}
